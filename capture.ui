@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>678</width>
-    <height>691</height>
+    <width>775</width>
+    <height>776</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,13 +21,19 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>70</y>
-      <width>691</width>
-      <height>531</height>
+      <y>100</y>
+      <width>741</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>imgs/error.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="lbStatus">
@@ -54,7 +60,7 @@
    <widget class="QLabel" name="lbName">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>260</x>
       <y>50</y>
       <width>511</width>
       <height>41</height>
@@ -75,8 +81,8 @@
    <widget class="QPushButton" name="btnLogin">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>590</y>
+      <x>380</x>
+      <y>660</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -91,8 +97,8 @@
    <widget class="QPushButton" name="btnReCapture">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>590</y>
+      <x>180</x>
+      <y>660</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -113,7 +119,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>678</width>
+     <width>775</width>
      <height>26</height>
     </rect>
    </property>

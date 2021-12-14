@@ -1,16 +1,16 @@
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtGui import QPixmap
-from PyQt5.uic import loadUi
-import sys
-
-from skimage.util.dtype import img_as_bool
+from PyQt5.QtWidgets import QMessageBox
+from PyQt5 import QtCore, QtGui, QtWidgets
+from addImageUI import Ui_MainWindow
 import capture
+from PyQt5.QtGui import QPixmap
+window2 = None
 
 
-class AddImage(QtWidgets.QMainWindow):
-    def __init__(self):
-        super(AddImage, self).__init__()
-        loadUi('addImage.ui', self)
+class AddImage(QtWidgets.QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(AddImage, self).__init__(parent)
+        self.setupUi(self)
+
         self.btnInput.clicked.connect(self.OpenFileDialog)
         self.txtLabel.setPlaceholderText("Nhap cac ky tu lien ke")
         self.btnAdd.clicked.connect(self.Add)
@@ -23,6 +23,7 @@ class AddImage(QtWidgets.QMainWindow):
             self.lbStatus.setText("Thêm hình ảnh thất bại!")
 
     def OpenFileDialog(self):
+        self.lbStatus.setText("")
         filename = QtWidgets.QFileDialog.getOpenFileName()
         # Get path of filename
         global img
@@ -31,8 +32,23 @@ class AddImage(QtWidgets.QMainWindow):
             img)
         self.lbImg.setPixmap(qpixmap)
 
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, 'Window Close', 'Bạn có chắc mún tắt hông?',
+                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
-app = QtWidgets.QApplication(sys.argv)
-fAddImage = AddImage()
-fAddImage.show()
-app.exec()
+        if reply == QMessageBox.Yes:
+            event.accept()
+            print('Window closed')
+        else:
+            event.ignore()
+
+    def Close(self):
+        self.close()
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    w = AddImage()
+    w.show()
+    sys.exit(app.exec_())
