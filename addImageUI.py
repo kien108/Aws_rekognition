@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(665, 666)
+        MainWindow.resize(802, 695)
         MainWindow.setStyleSheet("background-color: #f5f5f5;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
         self.lbImg.setGeometry(QtCore.QRect(10, 50, 771, 461))
         self.lbImg.setStyleSheet("text-align: center")
         self.lbImg.setText("")
-        self.lbImg.setScaledContents(False)
+        self.lbImg.setScaledContents(True)
         self.lbImg.setObjectName("lbImg")
         self.txtLabel = QtWidgets.QTextEdit(self.centralwidget)
         self.txtLabel.setGeometry(QtCore.QRect(170, 530, 471, 41))
@@ -48,7 +48,7 @@ class Ui_MainWindow(object):
         self.label.setStyleSheet("color: #555")
         self.label.setObjectName("label")
         self.btnAdd = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAdd.setGeometry(QtCore.QRect(190, 590, 311, 41))
+        self.btnAdd.setGeometry(QtCore.QRect(220, 590, 381, 41))
         self.btnAdd.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnAdd.setStyleSheet("background-color: #fa5230;\n"
 "border: 1px solid #ccc;\n"
@@ -67,7 +67,7 @@ class Ui_MainWindow(object):
         self.lbStatus.setObjectName("lbStatus")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 665, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 802, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)

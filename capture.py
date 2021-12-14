@@ -160,7 +160,7 @@ def Detect(img):
         textPosX = left - 30
         if imgWidth > 400:
             border = 10
-            fontSize = 70
+            fontSize = 60
             textPosY = top - 80
         else:
             border = 2
@@ -170,7 +170,7 @@ def Detect(img):
         points = ((left, top), (left+width, top), (left+width,
                                                    top+height), (left, top+height), (left, top))
         font = ImageFont.truetype(
-            r'D:\App Code\font\jetbrain\fonts\ttf\JetBrainsMono-Bold.ttf', fontSize)
+            "Capture\JetBrainsMono-Bold.ttf", fontSize)
         label = faceMatches[0]['Face']['ExternalImageId']
 
         draw.line(points, fill='#00d400', width=border)
@@ -219,11 +219,11 @@ def Authen(img):
         width = imgWidth * box['Width']
         height = imgHeight * box['Height']
 
-        textPosX = left - 30
+        textPosX = left
         if imgWidth > 400:
             border = 10
-            fontSize = 70
-            textPosY = top - 80
+            fontSize = 50
+            textPosY = top - 60
         else:
             border = 2
             fontSize = 20
@@ -232,7 +232,7 @@ def Authen(img):
         points = ((left, top), (left+width, top), (left+width,
                                                    top+height), (left, top+height), (left, top))
         font = ImageFont.truetype(
-            r'"Capture\JetBrainsMono-Bold.ttf"', fontSize)
+            "Capture\JetBrainsMono-Bold.ttf", fontSize)
         label = faceMatches[0]['Face']['ExternalImageId']
 
         draw.line(points, fill='#00d400', width=border)

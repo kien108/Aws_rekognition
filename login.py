@@ -33,7 +33,7 @@ def LoadCamera():
     isCapture = True
     isMatch = False
     # Default not capture
-    img = "D:\HK1-Năm 3\Cloud Computing\Capture\imgs\error.jpg"
+    img = "imgs\error.jpg"
     label = ""
 
     path_img = capture.Capture()
