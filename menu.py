@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from menuUI import Ui_MainWindow
+from ConvertUIToPython import menuUI
 import addImage
 import detectFace
 
@@ -7,7 +7,7 @@ addForm = None
 detectForm = None
 
 
-class Menu(QtWidgets.QMainWindow, Ui_MainWindow):
+class Menu(QtWidgets.QMainWindow, menuUI.Ui_MainWindow):
     def __init__(self, parent=None):
         super(Menu, self).__init__(parent)
         self.setupUi(self)

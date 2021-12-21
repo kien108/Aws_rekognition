@@ -23,7 +23,7 @@ def Capture():
 
     # Load ra tất cả ảnh đã capture hôm nay
     images = [cv2.imread(file)
-              for file in glob.glob('imgs/' + str(today) + '*.png')]
+              for file in glob.glob('Imgs/loginImgs/' + str(today) + '*.png')]
 
     # Số thứ tự để lưu ảnh, = 0 nếu hôm nay chưa có ảnh, = len() + 1 nếu đã có ảnh rồi
     numerical_order = 0 if len(images) == 0 else len(images)
@@ -46,8 +46,8 @@ def Capture():
         # Space to capture
         elif key % 256 == 32:
             img_name = str(today) + "_{}.png".format(numerical_order)
-            path_img = "imgs/" + img_name
-            cv2.imwrite("imgs/" + img_name, frame)
+            path_img = "Imgs/loginImgs/" + img_name
+            cv2.imwrite("Imgs/loginImgs/" + img_name, frame)
             print("Screenshot taken, spacebar")
             break
     camera.release()
@@ -85,7 +85,7 @@ def AddFace(img, label):
 
     faceimage = io.imread(img)
     # Nếu size của ảnh vượt quá 4096x4096 thì rescale lại thành 2048x2048
-    if (faceimage.shape[1] > 4096 or faceimage.shape[1] > 4096):
+    if (faceimage.shape[0] > 4096 or faceimage.shape[1] > 4096):
         faceimage = rescale(faceimage, 0.50, mode='constant')
 
     externalimageid = label
@@ -176,7 +176,7 @@ def Detect(img):
         draw.line(points, fill='#00d400', width=border)
         draw.text((textPosX, textPosY), label, fill="red", font=font)
 
-        targetfilename = "tempImg/a.png"
+        targetfilename = "Imgs/loginImgs/temp.png"
         targetimage.save(targetfilename)
 
         return isMatches, targetfilename, label

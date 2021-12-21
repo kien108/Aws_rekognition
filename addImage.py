@@ -1,12 +1,12 @@
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
-from addImageUI import Ui_MainWindow
-import capture
+from ConvertUIToPython import addImageUI
+import capture as capture
 from PyQt5.QtGui import QPixmap
 window2 = None
 
 
-class AddImage(QtWidgets.QMainWindow, Ui_MainWindow):
+class AddImage(QtWidgets.QMainWindow, addImageUI.Ui_MainWindow):
     def __init__(self, parent=None):
         super(AddImage, self).__init__(parent)
         self.setupUi(self)

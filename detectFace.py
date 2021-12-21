@@ -1,14 +1,14 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from detectFaceUI import Ui_MainWindow
-import capture
+from ConvertUIToPython import detectFaceUI
+import capture as capture
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMessageBox
 
 window2 = None
 
 
-class DetectFace(QtWidgets.QMainWindow, Ui_MainWindow):
+class DetectFace(QtWidgets.QMainWindow, detectFaceUI.Ui_MainWindow):
     def __init__(self, parent=None):
         super(DetectFace, self).__init__(parent)
         self.setupUi(self)

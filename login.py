@@ -1,10 +1,11 @@
 from PyQt5.QtGui import QPixmap
-import capture
-import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-import captureUI
-import menu
+import sys
 from unidecode import unidecode
+
+import capture
+import menu
+from ConvertUIToPython import captureUI
 
 
 window2 = None
@@ -33,7 +34,7 @@ def LoadCamera():
     isCapture = True
     isMatch = False
     # Default not capture
-    img = "imgs\error.jpg"
+    img = "Imgs\loginImgs\error.jpg"
     label = ""
 
     path_img = capture.Capture()
